@@ -413,15 +413,14 @@ function useDraggableBlockMenu(
 
   return createPortal(
     <>
-      <div
-        className="icon draggable-block-menu"
-        ref={menuRef}
-        draggable={true}
-        onDragStart={onDragStart}
-        onDragEnd={onDragEnd}>
-        <div className={isEditable ? 'icon' : ''} />
+      <div draggable={true} onDragStart={onDragStart} onDragEnd={onDragEnd}>
+        <div ref={menuRef} className="icon draggable-block-menu">
+          <div className={isEditable ? 'icon' : ''} />
+        </div>
       </div>
-      <div className="draggable-block-target-line" ref={targetLineRef} />
+      <div>
+        <div ref={targetLineRef} className="draggable-block-target-line" />
+      </div>
     </>,
     anchorElem,
   );
